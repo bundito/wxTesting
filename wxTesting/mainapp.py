@@ -5,16 +5,19 @@ Created on Jun 27, 2012
 '''
 import wx
 import gui
+import logic
 
 class mf(gui.MainFrame):
-	def __init__( self, parent ):
-		gui.MainFrame.__init__( self, parent )
+	def __init__(self, parent ):
+		gui.MainFrame.__init__(self, parent )
 	
 	# Handlers for MyFrame1 events.
-	def OnButton( self, event ):
-		# TODO: Implement do_config
-		print "Hello from override"
-		# pass
+	def OnNext(self, event):
+		logic.click_next(self, event)
+		
+	
+	def OnPrev(self, event):
+		logic.click_prev(self, event)
 
 
 class MyApp(wx.App):
