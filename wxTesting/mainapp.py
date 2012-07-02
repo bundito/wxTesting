@@ -12,12 +12,11 @@ class mf(gui.MainFrame):
 		gui.MainFrame.__init__(self, parent )
 	
 	# Handlers for MyFrame1 events.
-	def OnNext(self, event):
-		logic.click_next(self, event)
+	def OnHit(self, event):
+		logic.click_hit(self, event)
 		
-	
-	def OnPrev(self, event):
-		logic.click_prev(self, event)
+	def OnStand(self, event):
+		logic.click_stand(self, event)
 
 
 class MyApp(wx.App):

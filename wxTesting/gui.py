@@ -6,8 +6,8 @@ Created on Jun 20, 2012
 
 import wx
 
-NEXT_BUTTON = 1
-PREV_BUTTON = wx.NewId()
+BTN_HIT = wx.NewId()
+BTN_STND = wx.NewId()
 	
 class MainFrame(wx.Frame):
 	def __init__ (self, parent, id = wx.ID_ANY, title = "Trainer",
@@ -21,21 +21,23 @@ class MainFrame(wx.Frame):
 		self.panel = wx.Panel(self)
 		self.panel.SetBackgroundColour(wx.WHITE)
 		
-		self.counter = wx.TextCtrl(self.panel, -1, "0", pos = (50, 20))
+#		self.counter = wx.TextCtrl(self.panel, -1, "0", pos = (50, 20))
 		
-		next_button = wx.Button(self.panel, NEXT_BUTTON, label = "Next", pos = (50,50))
-		prev_button = wx.Button(self.panel, PREV_BUTTON, label = "Prev", pos = (50,75))
+		self.counter = wx.StaticText(self.panel, -1, label = "0", pos = (50, 20))
+		
+		hit_button = wx.Button(self.panel, BTN_HIT, label = "H", pos = (50,50))
+		stand_button = wx.Button(self.panel, BTN_STND, label = "S", pos = (50,75))
 		
 		
 		
 		# Event Handlers
-		self.Bind(wx.EVT_BUTTON, self.OnNext, next_button)
-		self.Bind(wx.EVT_BUTTON, self.OnPrev, prev_button)
+		self.Bind(wx.EVT_BUTTON, self.OnHit, hit_button)
+		self.Bind(wx.EVT_BUTTON, self.OnStand, stand_button)
 		
-		def OnNext(self, event):
+		def OnHit(self, event):
 			event.Skip()
 			
-		def OnPrev(self, event):
+		def OnStand(self, event):
 			event.Skip()
 		
 
