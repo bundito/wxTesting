@@ -30,6 +30,16 @@ class MainFrame(wx.Frame):
 		
 		
 		
+				
+		def ShowDlg():
+			dlg = wx.Dialog(self, wx.ID_ANY, "Test")
+			dlg.ShowModal()
+			dlg.Destroy()
+		
+	
+	
+	
+		
 		# Event Handlers
 		self.Bind(wx.EVT_BUTTON, self.OnHit, hit_button)
 		self.Bind(wx.EVT_BUTTON, self.OnStand, stand_button)
@@ -41,8 +51,9 @@ class MainFrame(wx.Frame):
 			event.Skip()
 		
 
-		
-		
 
-	
+class TestDialog(wx.Dialog):
+	def __init__(self, parent, id = wx.ID_ANY, title = "test", size=wx.DefaultSize, pos=wx.DefaultPosition, style=wx.DEFAULT_DIALOG_STYLE, useMetal=False):
+		super (TestDialog, self).__init__(parent, id, title, pos, size, style, name="")
+		pass
 	
