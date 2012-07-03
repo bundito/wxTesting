@@ -24,18 +24,19 @@ class DetailsDialog(wx.Dialog):
 		self.__DoLayout()
 		self.SetInitialSize()
 
-def __DoLayout(self):
-	sizer = wx.GridBagSizer(vgap=8, hgap=8)
-	type_lbl = wx.StaticText(self, label="Type:")
-	detail_lbl = wx.StaticText(self, label="Details:")
-	# Add the event type fields
-	sizer.Add(type_lbl, (1, 1))
-	sizer.Add(self.type, (1, 2), (1, 15), wx.EXPAND)
-	# Add the details field
-	sizer.Add(detail_lbl, (2, 1))
-	sizer.Add(self.details, (2, 2), (5, 15), wx.EXPAND)
-	# Add a spacer to pad out the right side
-	sizer.Add((5, 5), (2, 17))
-	# And another to the pad out the bottom
-	sizer.Add((5, 5), (7, 0))
-	self.SetSizer(sizer)
+
+	def __DoLayout(self):
+		sizer = wx.GridBagSizer(vgap=8, hgap=8)
+		type_lbl = wx.StaticText(self, label="Type:")
+		detail_lbl = wx.StaticText(self, label="Details:")
+		# Add the event type fields
+		sizer.Add(type_lbl, (1, 1))
+		sizer.Add(self.type, (1, 2), (1, 15), wx.EXPAND)
+		# Add the details field
+		sizer.Add(detail_lbl, (2, 1))
+		sizer.Add(self.details, (2, 2), (5, 15), wx.EXPAND)
+		# Add a spacer to pad out the right side
+		sizer.Add((5, 5), (2, 17))
+		# And another to the pad out the bottom
+		sizer.Add((5, 5), (7, 0))
+		self.SetSizer(sizer)

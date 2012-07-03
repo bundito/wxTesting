@@ -19,13 +19,19 @@ class mf(gui.MainFrame):
 	
 		if val == 10:
 			dlg = gui.TestDialog(self)
-			dlg.ShowModal()
+			dlgval = dlg.ShowModal()
 			dlg.Destroy()
+			print dlgval
 		
 	def OnStand(self, event):
-		logic.click_stand(self, event)
+		val = int(self.counter.GetLabel())
+		val += -1
+		self.counter.SetLabel(str(val))
 
-	
+		if val % 3 == 0:
+			self.spt_button.Enabled = False
+		else:
+			self.spt_button.Enabled = True
 	
 	
 	
