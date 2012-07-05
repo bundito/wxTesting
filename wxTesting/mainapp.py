@@ -7,7 +7,7 @@ import wx
 import gui
 
 import logging
-logging.basicConfig(level = logging.DEBUG)
+logging.basicConfig(level = logging.WARNING)
 
 class mf(gui.MainFrame):
 	def __init__(self, parent ):
@@ -39,7 +39,16 @@ class mf(gui.MainFrame):
 	
 	def keypress(self, event):
 		logging.debug("OnKey triggered in mainapp")
+		keycode = event.GetKeyCode()
+		if keycode <= 256:
+			key = chr(keycode)
 			
+			if key == "H":
+				self.OnHit(event)	
+			elif key == "S":
+				self.OnStand(event)
+
+
 
 class MyApp(wx.App):
 	def OnInit(self):

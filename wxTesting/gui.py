@@ -19,13 +19,13 @@ class MainFrame(wx.Frame):
 					pos=wx.DefaultPosition, size=wx.DefaultSize,
 					style=wx.DEFAULT_FRAME_STYLE, name = "My Frame"):
 		
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 620,406 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL|wx.WANTS_CHARS )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 620,406 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 		
 #		super (MainFrame, self).__init__(parent, id, title, pos, size, style, name)
 		
 		
 		# Attributes
-		panel = self.panel = wx.Panel(self, style = wx.WANTS_CHARS)
+		panel = self.panel = wx.Panel(self)
 		panel.SetBackgroundColour(wx.WHITE)
 		
 	
@@ -115,8 +115,7 @@ class MainFrame(wx.Frame):
 		def OnStand(self, event):
 			event.Skip()
 		
-		def keypress(self, event):
-			logging.debug("OnKey")
+		def OnKey(self, event):
 			event.Skip()
 			
 

@@ -1,7 +1,8 @@
 TODO
 
-- add statictext areas for display
-- key bindings as well as buttons
+x add statictext areas for display
+? key bindings as well as buttons
 - menu
 - image handling/slicing (CardCutter)
 - boss key
+- wx Table/grid display to show YML file
