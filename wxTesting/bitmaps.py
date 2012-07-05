@@ -38,6 +38,8 @@ class MyFrame1 ( wx.Frame ):
 		
 		# Connect Events
 		self.Bind( wx.EVT_MENU, self.do_config, id = self.m_menuItem1.GetId() )
+		
+		self.Bind(wx.EVT_KEY_DOWN, self.OnKey)
 	
 	def __del__( self ):
 		pass
@@ -50,6 +52,8 @@ class MyFrame1 ( wx.Frame ):
 		
 		event.Skip()
 	
+	def OnKey (self, event):
+		print "Keypress"
 
 ###########################################################################
 ## Class MyFrame3

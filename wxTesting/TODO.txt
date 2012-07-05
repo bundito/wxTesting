@@ -1,0 +1,7 @@
+TODO
+
+- add statictext areas for display
+- key bindings as well as buttons
+- menu
+- image handling/slicing (CardCutter)
+- boss key

@@ -5,12 +5,16 @@ Created on Jun 27, 2012
 '''
 import wx
 import gui
-import logic
+
+import logging
+logging.basicConfig(level = logging.DEBUG)
 
 class mf(gui.MainFrame):
 	def __init__(self, parent ):
 		gui.MainFrame.__init__(self, parent )
-	
+		
+		logging.debug("mf initialized")
+			
 	# Handlers for MyFrame1 events.
 	def OnHit(self, event):
 		val = int(self.counter.GetLabel())
@@ -33,11 +37,9 @@ class mf(gui.MainFrame):
 		else:
 			self.spt_button.Enabled = True
 	
-	
-	
-	
-	
-	
+	def keypress(self, event):
+		logging.debug("OnKey triggered in mainapp")
+			
 
 class MyApp(wx.App):
 	def OnInit(self):
